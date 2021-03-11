@@ -9,8 +9,7 @@ class User
 
   field :provider, type: String
   field :uid, type: String
-  field :name, type: String
-  field :image, type: String
+  field :access_token, type: String
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -29,8 +28,7 @@ class User
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      user.name = auth.info.name
-      user.image = auth.info.image
+      user.access_token = auth.credentials.token
     end
   end
 

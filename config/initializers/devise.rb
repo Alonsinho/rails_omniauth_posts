@@ -273,8 +273,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'],
-  scope: 'public_profile,email,instagram_basic,instagram_content_publish',
-  display: 'popup'
+  scope: 'public_profile,email,publish_to_groups,pages_read_engagement,pages_manage_posts',
+  display: 'page'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
